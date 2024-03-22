@@ -26,7 +26,7 @@ export class AppComponent {
 			case AuthStatus.checking:
 			return;
 			case AuthStatus.authenticated:
-				this.router.navigateByUrl (localStorage.getItem ('url')!.toString ());
+				this.router.navigateByUrl ('/dashboard');
 			return;
 			case AuthStatus.notAuthenticated:
 				this.router.navigateByUrl ('/auth/login');
