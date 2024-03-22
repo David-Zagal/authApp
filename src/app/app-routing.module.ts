@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { isAuthenticatedGuard, isNotAuthenticatedGuard } from './auth/guards';
 
@@ -21,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot (routes, { useHash: true })],
+	imports: [RouterModule.forRoot (routes, { useHash: false, preloadingStrategy: PreloadAllModules })],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {}
